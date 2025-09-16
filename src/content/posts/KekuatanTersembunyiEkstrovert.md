@@ -1,23 +1,23 @@
 ---
-title: Energi Positif Extrovert
+title: Energi Positif Ekstrovert
 template: blog-post
 date: 2025-09-15 11:16
-slug: /EnergiExtrovert
-featuredImage: /assets/exrovert3.jpg
-description: Energi Positif Extrovert Dalam Interaksi Sosial
+slug: /EnergiEkstrovert
+featuredImage: /assets/energipositifekstrovert.png
+description: Energi Positif Ekstrovert Dalam Interaksi Sosial
 ---
 
 ### Kekuatan Tersembunyi Ekstrovert : Energi Positif dalam Interaksi Sosial
  
 
-Dalam dunia yang penuh dengan dinamika sosial, orang dengan kepribadian ekstrovert sering kali menjadi pusat perhatian. Mereka dikenal sebagai pribadi yang terbuka, ramah, dan mudah bergaul. Namun di balik semua itu, ada kekuatan tersembunyi yang sering luput dari sorotan—yakni kemampuan alami mereka untuk membawa energi positif dalam setiap interaksi sosial.
+Dalam dunia yang penuh dengan dinamika sosial, orang dengan kepribadian ekstrovert sering kali menjadi pusat perhatian. Mereka dikenal sebagai pribadi yang terbuka, ramah, dan mudah bergaul. Namun di balik semua itu, ada kekuatan tersembunyi yang sering luput dari sorotan—yakni kemampuan alami mereka untuk membawa suasana penuh energi positif dalam setiap pertemuan sosial.
 
 ### Apa Itu Ekstrovert?
 
 Secara sederhana, ekstrovert adalah orang yang mendapatkan energi dari interaksi sosial. Berbeda dengan introvert yang cenderung mengisi ulang energi saat sendirian, ekstrovert merasa lebih hidup dan semangat ketika berada di tengah orang banyak. Mereka cenderung spontan, ekspresif, dan komunikatif, membuat mereka terlihat mudah menyesuaikan diri dalam berbagai situasi sosial.
 
 
-### Energi Positif yang Menular
+### Aura Positif Yang Tersampaikan
 
 Salah satu kekuatan terbesar seorang ekstrovert adalah kemampuan mereka untuk menyalurkan energi positif kepada orang di sekitarnya. Mereka sering:
 
@@ -35,7 +35,7 @@ Ekstrovert sering kali terlihat sebagai pemimpin dalam grup, bukan karena domina
 - Membantu mencairkan suasana dalam diskusi
 - Menghidupkan forum atau pertemuan yang membosankan
 
-#### Empati dan Koneksi Emosional
+#### Kepedulian dan Ikatan Perasaan
 
 Meski banyak yang mengira ekstrovert hanya suka bicara, kenyataannya banyak dari mereka memiliki empati sosial tinggi. Mereka cepat membaca suasana hati orang lain, peka terhadap perubahan nada suara, ekspresi wajah, dan bahasa tubuh. Ini membuat mereka:
 

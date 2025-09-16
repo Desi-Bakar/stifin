@@ -3,6 +3,7 @@ import { jsx } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons"
+import React, { useState } from "react"
 
 import Header from "./header"
 import Logo from "./logo"
@@ -10,7 +11,7 @@ import Footer from "./footer"
 import Search from "../components/search"
 
 import "../assets/scss/style.scss"
-import "./navbar.css"   // ✅ styling navbar tetap dipakai
+import "./navbar.css"
 
 const query = graphql`
   query LayoutQuery {
@@ -29,36 +30,49 @@ const Layout = ({ children, className }) => {
   const { site, siteSearchIndex } = useStaticQuery(query)
   const { siteTitle } = site.siteMetadata
 
+  const [isOpen, setIsOpen] = useState(false)
+
+  // Tutup menu saat klik link
+  const handleLinkClick = () => setIsOpen(false)
+
   return (
     <div className="primary-container">
       <Header>
-        {/* ✅ Logo */}
         <Logo title={siteTitle} />
 
-        {/* ✅ Navbar */}
         <div sx={layoutStyle.nav}>
           {/* Search versi mobile */}
           <div sx={{ display: ["flex", "flex", "flex", "none"] }}>
             <Search searchIndex={siteSearchIndex.index} />
           </div>
 
-          {/* Menu */}
+          {/* ===== NAVBAR ===== */}
           <nav className="navbar">
-            <ul className="nav-links">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/manfaat">Manfaat</Link></li>
-              <li><Link to="/keunggulan">Keunggulan</Link></li>
-              <li><Link to="/layanan">Layanan</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+            {/* Hamburger icon */}
+            <div
+              className={`menu-toggle ${isOpen ? "open" : ""}`}
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            {/* Menu links */}
+            <ul className={`nav-links ${isOpen ? "show" : ""}`}>
+              <li><Link to="/" activeClassName="active" onClick={handleLinkClick}>Home</Link></li>
+              <li><Link to="/manfaat" activeClassName="active" onClick={handleLinkClick}>Manfaat</Link></li>
+              <li><Link to="/keunggulan" activeClassName="active" onClick={handleLinkClick}>Keunggulan</Link></li>
+              <li><Link to="/layanan" activeClassName="active" onClick={handleLinkClick}>Layanan</Link></li>
+              <li><Link to="/blog" activeClassName="active" onClick={handleLinkClick}>Blog</Link></li>
+              <li><Link to="/contact" activeClassName="active" onClick={handleLinkClick}>Contact</Link></li>
             </ul>
           </nav>
         </div>
 
-        {/* ✅ Bagian kanan (Search + WA, tanpa Theme) */}
+        {/* Icon kanan */}
         <div sx={layoutStyle.appearance}>
           <Search searchIndex={siteSearchIndex.index} />
-
           <a
             href="https://wa.me/6281234567890"
             target="_blank"
@@ -71,10 +85,7 @@ const Layout = ({ children, className }) => {
         </div>
       </Header>
 
-      {/* ✅ Konten utama */}
       <main className={"container " + (className || "")}>{children}</main>
-
-      {/* ✅ Footer */}
       <Footer />
     </div>
   )

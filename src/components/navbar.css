@@ -1,7 +1,7 @@
-/* ====== NAVBAR STIFIn ====== */
+/* ===== NAVBAR STIFIn ===== */
 .navbar {
   width: 100%;
-  background: #0056D2; /* Biru utama STIFIn */
+  background: #0056D2;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,7 +12,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Logo */
+/* Logo kiri */
 .navbar .logo {
   font-size: 22px;
   font-weight: 700;
@@ -23,22 +23,22 @@
 }
 
 .navbar .logo:hover {
-  color: #FFD529; /* Aksen kuning */
+  color: #FFD529;
 }
 
-/* Menu List */
-.navbar ul {
+/* Menu list */
+.navbar .nav-links {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
 }
 
-.navbar ul li {
+.navbar .nav-links li {
   margin: 0 8px;
 }
 
-.navbar ul li a {
+.navbar .nav-links li a {
   display: block;
   text-decoration: none;
   font-size: 16px;
@@ -49,15 +49,24 @@
   transition: all 0.3s ease;
 }
 
-/* Hover dan Active */
-.navbar ul li a:hover,
-.navbar ul li a.active {
-  background: #FFD529; /* kuning brand */
+/* Hover */
+.navbar .nav-links li a:hover {
+  background: #FFD529;
   color: #111;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Icon tambahan (search, darkmode, dll) */
+/* Active (halaman aktif) */
+.navbar .nav-links li a.active {
+  background: none;
+  color: #FFD529;
+  box-shadow: none;
+  border-bottom: 2px solid #FFD529;
+  border-radius: 0;
+  padding-bottom: 6px;
+}
+
+/* Icons kanan */
 .navbar .nav-icons {
   display: flex;
   align-items: center;
@@ -75,48 +84,78 @@
   color: #FFD529;
 }
 
+/* ===== HAMBURGER MENU ===== */
+.menu-toggle {
+  width: 28px;
+  height: 22px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animasi jadi X */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .navbar {
     padding: 12px 20px;
   }
 
-  .navbar ul {
+  /* Hamburger muncul */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Menu mobile */
+  .navbar .nav-links {
     position: absolute;
     top: 60px;
-    right: 0;
+    right: 20px;
     background: #0056D2;
     flex-direction: column;
     width: 220px;
     text-align: center;
     display: none;
     padding: 20px 0;
-    border-radius: 0 0 12px 12px;
+    border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
-  .navbar ul.show {
+  .navbar .nav-links.show {
     display: flex;
   }
 
-  .navbar ul li {
+  .navbar .nav-links li {
     margin: 12px 0;
   }
 
-  .navbar ul li a {
+  .navbar .nav-links li a {
     padding: 10px 20px;
-  }
-
-  .navbar .menu-toggle {
-    display: block;
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
   }
 }
 
 @media (min-width: 769px) {
-  .navbar .menu-toggle {
+  .menu-toggle {
     display: none;
   }
 }

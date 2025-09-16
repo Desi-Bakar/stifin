@@ -4,7 +4,7 @@ title: Pola Pikir Thinking Introvert
 slug: /thinking introvert
 date: 2025-09-11 12:46
 description: Cara Memahami Pola Pikir Thinking Introvert
-featuredImage: /assets/thinkingintrovert2.jpg
+featuredImage: /assets/thinkingintrovert3.jpg
 ---
 
 
@@ -15,7 +15,7 @@ Memahami pola pikir seorang thinking introvert membutuhkan empati, kesabaran, da
 #### 1. Pahami bahwa mereka berpikir dulu, bicara 
 
 Thinking introvert tidak langsung bereaksi. Mereka memproses informasi secara internal, menimbang berbagai sudut pandang sebelum memberi respons.
-Jangan paksa mereka menjawab cepat. Diam mereka bukan berarti bingung—mereka sedang berpikir dalam.
+Jelaskan bahwa tidak perlu terburu-buru. Diam mereka bukan berarti bingung—mereka sedang berpikir dalam.
 
 #### 2. Fokus pada isi, bukan gaya bicara
 
@@ -42,8 +42,3 @@ Jangan anggap mereka tidak empati—mereka hanya mengekspresikannya secara berbe
 Thinking introvert tidak suka terburu-buru. Mereka ingin memahami semua variabel terlebih dahulu.
 Jika kamu ingin mereka setuju dengan sesuatu, beri waktu untuk mereka mempertimbangkannya secara rasional.
 
-Kesimpulan
-
-Pola pikir thinking introvert mungkin tidak mudah dipahami secara instan, tapi ketika kamu belajar masuk ke cara mereka melihat dunia, kamu akan menemukan pemikiran yang dalam, terstruktur, dan sangat rasional.
-
-Jika kamu memberi mereka ruang dan pengertian, kamu bisa menjalin hubungan yang sangat kuat—karena di balik sikap tenang mereka, ada pemikiran yang selalu berjalan dan hati yang (meski tersembunyi) tetap peduli.
