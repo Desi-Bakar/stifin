@@ -118,13 +118,14 @@ const Contact = ({ data }) => {
               name="message"
               placeholder="Write your message here..."
               required
-              rows={6}
+              rows={5}
               sx={contactStyles.textarea}
             />
           </p>
           <p sx={contactStyles.submitWrapper}>
             <button type="submit" sx={contactStyles.button}>
-              Send Message <RiSendPlane2Line sx={{ ml: 2, verticalAlign: "middle" }} />
+              Send Message{" "}
+              <RiSendPlane2Line sx={{ ml: 2, verticalAlign: "middle" }} />
             </button>
           </p>
         </form>
@@ -139,46 +140,43 @@ const contactStyles = {
   contactPage: {
     bg: "#FFD529",
     minHeight: "100vh",
-    py: [6, 7],
+    py: [5, 6],
     px: 3,
     fontFamily: "'Poppins', sans-serif",
     color: "#222",
   },
   container: {
-    maxWidth: 960,
+    maxWidth: 800,
     mx: "auto",
     display: "grid",
     gridTemplateColumns: ["1fr", "1fr 1fr"],
-    gap: 6,
+    gap: 5,
     alignItems: "start",
   },
   infoSection: {
     bg: "rgba(255, 255, 255, 0.85)",
-    p: [4, 5],
-    borderRadius: 12,
-    boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
+    p: [3, 4],
+    borderRadius: 10,
+    boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
   },
   title: {
-    fontSize: [5, 6],
-    fontWeight: "900",
-    mb: 3,
+    fontSize: [4, 5],
+    fontWeight: "800",
+    mb: 2,
     color: "#222",
-    letterSpacing: "0.05em",
+    letterSpacing: "0.03em",
     textTransform: "uppercase",
   },
   description: {
-    fontSize: 2,
-    lineHeight: 1.7,
-    mb: 4,
+    fontSize: 1,
+    lineHeight: 1.6,
+    mb: 3,
     color: "#444",
   },
   contactDetails: {
-    fontSize: 2,
+    fontSize: 1,
     color: "#333",
-    lineHeight: 1.6,
+    lineHeight: 1.5,
     p: {
       mb: 2,
     },
@@ -194,33 +192,31 @@ const contactStyles = {
   },
   form: {
     bg: "rgba(255, 255, 255, 0.95)",
-    p: [5, 6],
-    borderRadius: 12,
-    boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
+    p: [4, 5],
+    borderRadius: 10,
+    boxShadow: "0 8px 20px rgba(0,0,0,0.1)",
     display: "flex",
     flexDirection: "column",
   },
   field: {
-    mb: 4,
+    mb: 3,
     display: "flex",
     flexDirection: "column",
   },
   label: {
-    mb: 2,
-    fontWeight: "700",
+    mb: 1,
+    fontWeight: "600",
     fontSize: 1,
     color: "#222",
-    letterSpacing: "0.03em",
+    letterSpacing: "0.02em",
   },
   input: {
-    border: "2px solid #ccc",
-    borderRadius: 8,
-    px: 3,
-    py: 3,
-    fontSize: 2,
+    border: "1.5px solid #ccc",
+    borderRadius: 6,
+    px: 2,
+    py: 2,
+    fontSize: 1,
     fontWeight: "500",
-    transition: "all 0.3s ease",
-    boxShadow: "inset 0 2px 5px rgba(0,0,0,0.05)",
     "&::placeholder": {
       color: "#999",
       fontStyle: "italic",
@@ -228,21 +224,19 @@ const contactStyles = {
     "&:focus": {
       borderColor: "#222",
       outline: "none",
-      boxShadow: "0 0 8px #222",
+      boxShadow: "0 0 5px #222",
       backgroundColor: "#fff",
     },
   },
   textarea: {
-    border: "2px solid #ccc",
-    borderRadius: 8,
-    px: 3,
-    py: 3,
-    fontSize: 2,
+    border: "1.5px solid #ccc",
+    borderRadius: 6,
+    px: 2,
+    py: 2,
+    fontSize: 1,
     fontWeight: "500",
     resize: "vertical",
-    minHeight: 140,
-    transition: "all 0.3s ease",
-    boxShadow: "inset 0 2px 5px rgba(0,0,0,0.05)",
+    minHeight: 100,
     "&::placeholder": {
       color: "#999",
       fontStyle: "italic",
@@ -250,7 +244,7 @@ const contactStyles = {
     "&:focus": {
       borderColor: "#222",
       outline: "none",
-      boxShadow: "0 0 8px #222",
+      boxShadow: "0 0 5px #222",
       backgroundColor: "#fff",
     },
   },
@@ -260,30 +254,30 @@ const contactStyles = {
   button: {
     bg: "#222",
     color: "#FFD529",
-    fontWeight: "900",
-    fontSize: 3,
-    px: 6,
-    py: 3,
-    borderRadius: 10,
+    fontWeight: "800",
+    fontSize: 2,
+    px: 4,
+    py: 2,
+    borderRadius: 8,
     cursor: "pointer",
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
-    letterSpacing: "0.1em",
+    letterSpacing: "0.05em",
     textTransform: "uppercase",
-    boxShadow: "0 6px 15px rgba(0,0,0,0.2)",
+    boxShadow: "0 4px 10px rgba(0,0,0,0.15)",
     transition: "all 0.3s ease",
     border: "none",
     "&:hover, &:focus": {
       bg: "#000",
       color: "#FFD529",
-      boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
+      boxShadow: "0 6px 15px rgba(0,0,0,0.3)",
       outline: "none",
-      transform: "translateY(-2px)",
+      transform: "translateY(-1px)",
     },
     svg: {
-      ml: 3,
-      fontSize: 28,
+      ml: 2,
+      fontSize: 22,
     },
   },
 }
