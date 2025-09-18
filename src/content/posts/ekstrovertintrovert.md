@@ -1,7 +1,7 @@
 ---
 title: Apa Yang Bisa Dipelajari Dari Ekstrovert Introvert?
 template: blog-post
-date: 2025-09-15 11:16
+date: 2025-09-17 11:16
 slug: /Ekstrovert Introvert
 featuredImage: /assets/ekstrovertintrovert.jpg
 description: Apa Yang Bisa Dipelajari Dari Ekstrovert Introvert?
