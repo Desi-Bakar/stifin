@@ -1,10 +1,10 @@
 ---
-title: ---
-title: Apakah Kamu Ekstrovert atau Introvert?
-date: 2025-09-18 10:22
-slug: /Ekstrovert Introvert
+title: Apakah Kamu Ekstrovert atau Introvert
+template: blog-post
+date: 2025-09-18 11:16
+slug: /kamu ektrovert introvert
 featuredImage: /assets/kamuekstrovertintrovert.png
-description: Apakah Kamu Lebih Ekstrovert atau Introvert?
+description: Apakah Kamu Lebih Ekstrovert atau Introvert? Kenali Dirimu Lebih Dalam
 ---
 
 #### Apakah Kamu Lebih Ekstrovert atau Introvert? Kenali Dirimu Lebih Dalam
