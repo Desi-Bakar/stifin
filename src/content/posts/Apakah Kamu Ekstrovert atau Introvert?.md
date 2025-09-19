@@ -37,7 +37,7 @@ Introvert justru sebaliknya, mereka merasa lebih bertenaga ketika berada di suas
 
 - Cenderung berpikir sebelum berbicara.
 
-- Peka terhadap suasana hati sendiri maupun orang lain.
+- Mampu merasakan dan memahami perasaan diri sendiri serta orang di sekitar
 
 #### Bagaimana Cara Mengenali Dirimu?
 
