@@ -71,7 +71,15 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-theme-ui`,
-    // gatsby-plugin-netlify-cms dihapus sementara
+
+    // ✅ aktifkan lagi netlify CMS
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`, // bikin file kosong kalau belum ada
+      },
+    },
+
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

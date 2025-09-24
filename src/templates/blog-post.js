@@ -18,7 +18,7 @@ const Pagination = ({ previous, next }) => (
     }}
     aria-label="Pagination"
   >
-    {previous && previous.frontmatter.template === "blog-post" ? (
+    {previous ? (
       <Link
         to={previous.frontmatter.slug}
         rel="prev"
@@ -40,7 +40,7 @@ const Pagination = ({ previous, next }) => (
       <div />
     )}
 
-    {next && next.frontmatter.template === "blog-post" ? (
+    {next ? (
       <Link
         to={next.frontmatter.slug}
         rel="next"
@@ -99,15 +99,15 @@ const Post = ({ data, pageContext }) => {
           }}
         >
           <h1
-  sx={{
-    fontSize: [6, 7],    // dari [5,6] jadi [6,7], lebih besar
-    fontWeight: "heading",
-    mb: 3,
-    lineHeight: 1.2,
-  }}
->
-  {frontmatter.title}
-</h1>
+            sx={{
+              fontSize: [6, 7],
+              fontWeight: "heading",
+              mb: 3,
+              lineHeight: 1.2,
+            }}
+          >
+            {frontmatter.title}
+          </h1>
 
           <time
             sx={{
@@ -132,38 +132,37 @@ const Post = ({ data, pageContext }) => {
           />
         )}
 
-<section
-  sx={{
-    variant: "styles.root",
-    fontSize: 3,          // dari 2 jadi 3 (biasanya 16px ke 18-20px)
-    lineHeight: "body",   // pastikan lineHeight cukup lega, biasanya 1.6-1.8
-    color: "text",
-    "& p": {
-      mb: 5,              // margin bawah antar paragraf lebih besar
-    },
-    "& blockquote": {
-      pl: 4,
-      borderLeft: theme => `4px solid ${theme.colors.primary}`,
-      color: "primary",
-      fontStyle: "italic",
-      mb: 5,
-    },
-    "& a": {
-      color: "primary",
-      textDecoration: "underline",
-      "&:hover": {
-        color: "secondary",
-      },
-    },
-    "& img": {
-      maxWidth: "100%",
-      borderRadius: 4,
-      my: 5,
-    },
-  }}
-  dangerouslySetInnerHTML={{ __html: html }}
-/>
-
+        <section
+          sx={{
+            variant: "styles.root",
+            fontSize: 3,
+            lineHeight: "body",
+            color: "text",
+            "& p": {
+              mb: 5,
+            },
+            "& blockquote": {
+              pl: 4,
+              borderLeft: theme => `4px solid ${theme.colors.primary}`,
+              color: "primary",
+              fontStyle: "italic",
+              mb: 5,
+            },
+            "& a": {
+              color: "primary",
+              textDecoration: "underline",
+              "&:hover": {
+                color: "secondary",
+              },
+            },
+            "& img": {
+              maxWidth: "100%",
+              borderRadius: 4,
+              my: 5,
+            },
+          }}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
       </article>
 
       {(previous || next) && <Pagination previous={previous} next={next} />}
@@ -180,6 +179,7 @@ export const pageQuery = graphql`
       html
       excerpt(pruneLength: 148)
       frontmatter {
+        template
         date(formatString: "MMMM DD, YYYY")
         slug
         title
