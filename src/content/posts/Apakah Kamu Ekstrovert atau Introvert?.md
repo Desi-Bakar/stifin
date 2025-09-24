@@ -18,11 +18,8 @@ Ekstrovert adalah individu yang memperoleh energi dari interaksi sosial. Mereka 
 #### Ciri umum ekstrovert:
 
 - Senang bertemu banyak orang.
-
 - Lebih suka berdiskusi ketimbang merenung sendiri.
-
 - Mudah mengekspresikan perasaan.
-
 - Terkesan percaya diri di lingkungan baru.
 
 #### Apa Itu Introvert?
@@ -32,11 +29,8 @@ Introvert justru sebaliknya, mereka merasa lebih bertenaga ketika berada di suas
 #### Ciri umum introvert:
 
 - Lebih suka menyendiri untuk mengisi energi.
-
 - Menyukai percakapan yang mendalam, bukan basa-basi.
-
 - Cenderung berpikir sebelum berbicara.
-
 - Mampu merasakan dan memahami perasaan diri sendiri serta orang di sekitar
 
 #### Bagaimana Cara Mengenali Dirimu?

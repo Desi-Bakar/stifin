@@ -16,9 +16,7 @@ Setiap orang pasti pernah menghadapi stres, baik karena pekerjaan, hubungan sosi
 Ekstrovert cenderung mendapatkan energi dari interaksi sosial. Ketika stres, mereka biasanya:
 
 - Mencari teman bicara untuk meluapkan perasaan.
-
 - Berkumpul dengan orang lain agar tidak merasa sendirian.
-
 - Mengalihkan diri dengan aktivitas ramai, seperti olahraga kelompok, menghadiri acara, atau sekadar nongkrong bersama teman.
 
 Pendekatan ini membuat ekstrovert merasa lega karena mereka mendapatkan dukungan emosional secara langsung dari lingkungannya.
@@ -28,9 +26,7 @@ Pendekatan ini membuat ekstrovert merasa lega karena mereka mendapatkan dukungan
 Introvert justru lebih nyaman menghadapi stres dengan cara menyendiri. Biasanya mereka akan:
 
 - Mengambil waktu untuk sendiri agar bisa mengisi ulang energi.
-
 - Menulis atau membaca sebagai sarana menenangkan pikiran.
-
 - Meditasi, mendengarkan musik, atau aktivitas tenang lainnya yang membantu menenangkan hati.
 
 Bagi introvert, kesendirian adalah ruang penyembuhan. Dengan menjauh sejenak dari hiruk pikuk, mereka dapat mengatur kembali emosi dan pikiran.
@@ -40,9 +36,7 @@ Bagi introvert, kesendirian adalah ruang penyembuhan. Dengan menjauh sejenak dar
 Tidak ada cara yang sepenuhnya benar atau salah. Baik ekstrovert maupun introvert memiliki strategi unik yang sesuai dengan karakter mereka. Justru, memahami perbedaan ini bisa membantu kita:
 
 - Lebih empati terhadap orang lain dalam menghadapi stres.
-
 - Menemukan metode terbaik untuk diri sendiri.
-
 - Menyadari bahwa setiap individu punya kebutuhan berbeda dalam proses pemulihan.
 
 
