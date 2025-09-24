@@ -1,6 +1,6 @@
+/* ===== FOOTER CURVED ===== */
 .footer-curved {
-  /* background: linear-gradient(135deg, #FFD529 0%, #0056D2 100%); */
-background:  #0056D2 ;
+  background: #0056D2;
   color: white;
   padding: 2rem 1rem;
   text-align: center;
@@ -8,17 +8,37 @@ background:  #0056D2 ;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
-  box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+
+  /* Efek timbul 3D */
+  box-shadow: 0 -8px 20px rgba(0,0,0,0.4),
+              inset 0 6px 12px rgba(255,255,255,0.15);
+
+  /* Animasi awal */
+  transform: translateY(100px) scale(0.95);
+  opacity: 0;
+  transition: all 0.8s ease-out;
 }
+
+/* Saat footer muncul di viewport */
+.footer-curved.show {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* ===== FOOTER LINK ===== */
 .footer-link {
   color: #ffd700;
   text-decoration: none;
-  font-weight: 1200;
+  font-weight: 900;
   font-size: 33px;
   font-style: oblique;
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
+
 .footer-link:hover,
 .footer-link:focus {
   text-decoration: underline;
   outline: none;
+  text-shadow: 0 0 8px #fff, 0 0 12px #ffd700;
+  transform: scale(1.1);
 }

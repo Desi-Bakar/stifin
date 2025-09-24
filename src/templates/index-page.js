@@ -6,6 +6,7 @@ import { RiArrowRightSLine } from "react-icons/ri"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Footer from "../components/footer"   // ✅ tambahin ini
 
 export const pageQuery = graphql`
   query HomeQuery($id: String!) {
@@ -126,13 +127,6 @@ const HomePage = ({ data }) => {
             {frontmatter.cta.ctaText}
             <RiArrowRightSLine sx={{ ml: 2, fontSize: 3 }} />
           </Link>
-
-          {/* SOCIAL ICONS - dimatikan */}
-          {/*
-          <div sx={{ mt: 4, display: "flex", gap: 2, flexWrap: "wrap" }}>
-            {sIcons}
-          </div>
-          */}
         </div>
 
         {Image && (
@@ -242,6 +236,9 @@ const HomePage = ({ data }) => {
           })}
         </div>
       </section>
+
+      {/* ✅ Tambahin Footer */}
+      <Footer />
     </Layout>
   )
 }
