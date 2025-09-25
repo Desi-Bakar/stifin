@@ -12,14 +12,14 @@ media_folder: "static/assets"
 public_folder: "/assets"
 
 collections:
-  - name: "posts"
-    label: "Posts"
-    label_singular: "Post"
+  - name: "content"
+    label: "Content"
+    label_singular: "Item"
     description: >
       Create awesome content here.
     folder: "src/content/posts"
     create: true
-    slug: "{{slug}}"   # otomatis slugify dari title → aman tanpa karakter khusus
+    slug: "{{slug}}"
     summary: "{{title}} — {{year}}/{{month}}/{{day}}"
     fields:
       - { label: "Title", name: "title", widget: "string", tagname: "h1" }
