@@ -8,9 +8,6 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
-# Uncomment local_backend when you need to develop in your local
-# local_backend: true # run `npx netlify-cms-proxy-server` for local testing
-
 media_folder: "static/assets"
 public_folder: "/assets"
 
@@ -22,7 +19,7 @@ collections:
       Create awesome content here.
     folder: "src/content/posts"
     create: true
-    slug: "{{slug}}" # otomatis dari judul file
+    slug: "{{slug}}"   # otomatis slugify dari title → aman tanpa karakter khusus
     summary: "{{title}} — {{year}}/{{month}}/{{day}}"
     fields:
       - { label: "Title", name: "title", widget: "string", tagname: "h1" }
