@@ -1,7 +1,7 @@
 ---
 template: blog-post
 title: Ekstrovert vs Introvert  Mana yang Lebih Bahagia?
-slug: Ekstrovert vs Introvert  Mana yang Lebih Bahagia?
+slug: posts
 date: 2025-09-25 13:17
 description: "Kehidupan Sosial Ekstrovert vs Introvert: Mana yang Lebih Bahagia?"
 featuredImage: /assets/chatgpt-image-sep-25-2025-01_47_09-pm.png
