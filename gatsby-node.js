@@ -1,25 +1,34 @@
-const path = require("path")
-const { createFilePath } = require("gatsby-source-filesystem")
+const path = require("path");
+const { createFilePath } = require("gatsby-source-filesystem");
 
-// Buat slug otomatis
+// Tambahin field slug di setiap MarkdownRemark
 exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
 
   if (node.internal.type === "MarkdownRemark") {
-    const slug = createFilePath({ node, getNode, basePath: "content/posts" })
+    // Kalau slug sudah ada di frontmatter, pakai itu
+    let slug =
+      node.frontmatter && node.frontmatter.slug
+        ? node.frontmatter.slug
+        : createFilePath({ node, getNode, basePath: "content/posts" });
+
+    // Pastikan slug selalu punya prefix /blog/
+    if (!slug.startsWith("/blog")) {
+      slug = `/blog${slug}`;
+    }
 
     createNodeField({
       node,
       name: "slug",
       value: slug,
-    })
+    });
   }
-}
+};
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
-  const blogListTemplate = path.resolve("./src/templates/blog-list.js")
-  const blogPostTemplate = path.resolve("./src/templates/blog-post.js")
+  const { createPage } = actions;
+  const blogListTemplate = path.resolve("./src/templates/blog-list.js");
+  const blogPostTemplate = path.resolve("./src/templates/blog-post.js");
 
   const result = await graphql(`
     {
@@ -37,34 +46,34 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
       }
     }
-  `)
+  `);
 
   if (result.errors) {
-    reporter.panicOnBuild("❌ Error saat menjalankan GraphQL query.")
-    return
+    reporter.panicOnBuild("❌ Error saat menjalankan GraphQL query.", result.errors);
+    return;
   }
 
-  const posts = result.data.allMarkdownRemark.edges
+  const posts = result.data.allMarkdownRemark.edges;
 
-  // Buat halaman artikel
+  // Buat halaman tiap blog post
   posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? null : posts[index + 1].node
-    const next = index === 0 ? null : posts[index - 1].node
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node;
+    const next = index === 0 ? null : posts[index - 1].node;
 
     createPage({
-      path: `/blog${post.node.fields.slug}`, // contoh: /blog/ekstrovert-introvert/
+      path: post.node.fields.slug,
       component: blogPostTemplate,
       context: {
         id: post.node.id,
         previous,
         next,
       },
-    })
-  })
+    });
+  });
 
   // Buat pagination list blog
-  const postsPerPage = 9
-  const numPages = Math.ceil(posts.length / postsPerPage)
+  const postsPerPage = 9;
+  const numPages = Math.ceil(posts.length / postsPerPage);
 
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
@@ -76,6 +85,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         numPages,
         currentPage: i + 1,
       },
-    })
-  })
-}
+    });
+  });
+};
