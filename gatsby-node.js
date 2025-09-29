@@ -1,34 +1,20 @@
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
-// Tambahin field slug di setiap MarkdownRemark
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === "MarkdownRemark") {
-    // Kalau slug sudah ada di frontmatter, pakai itu
-    let slug =
-      node.frontmatter && node.frontmatter.slug
-        ? node.frontmatter.slug
-        : createFilePath({ node, getNode, basePath: "content/posts" });
-
-    // Pastikan slug selalu punya prefix /blog/
-    if (!slug.startsWith("/blog")) {
-      slug = `/blog${slug}`;
-    }
-
-    createNodeField({
-      node,
-      name: "slug",
-      value: slug,
-    });
+    const slug = createFilePath({ node, getNode, basePath: "pages" });
+    createNodeField({ node, name: "slug", value: slug });
   }
 };
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
+
+  // Template untuk daftar blog
   const blogListTemplate = path.resolve("./src/templates/blog-list.js");
-  const blogPostTemplate = path.resolve("./src/templates/blog-post.js");
 
   const result = await graphql(`
     {
@@ -36,10 +22,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         edges {
           node {
             id
-            fields {
-              slug
-            }
             frontmatter {
+              slug
+              template
               title
             }
           }
@@ -48,36 +33,54 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `);
 
+  // Kalau query gagal, hentikan build
   if (result.errors) {
-    reporter.panicOnBuild("❌ Error saat menjalankan GraphQL query.", result.errors);
+    reporter.panicOnBuild("❌ Error saat menjalankan GraphQL query.");
     return;
   }
 
   const posts = result.data.allMarkdownRemark.edges;
+  let blogPostsCount = 0;
 
-  // Buat halaman tiap blog post
   posts.forEach((post, index) => {
+    const { id, frontmatter } = post.node;
+    const { slug, template, title } = frontmatter;
+
+    // ✅ Validasi: slug & template harus ada
+    if (!slug || !template) {
+      reporter.warn(
+        `⚠️ Lewati pembuatan halaman untuk post "${title}" (ID: ${id}) karena slug atau template tidak ada.`
+      );
+      return;
+    }
+
     const previous = index === posts.length - 1 ? null : posts[index + 1].node;
     const next = index === 0 ? null : posts[index - 1].node;
 
+    // ✅ Buat halaman dari markdown
     createPage({
-      path: post.node.fields.slug,
-      component: blogPostTemplate,
+      path: slug,
+      component: path.resolve(`./src/templates/${template}.js`),
       context: {
-        id: post.node.id,
+        id,
         previous,
         next,
       },
     });
+
+    // Hitung hanya post dengan template "blog-post"
+    if (template === "blog-post") {
+      blogPostsCount++;
+    }
   });
 
-  // Buat pagination list blog
+  // ✅ Pagination blog list
   const postsPerPage = 9;
-  const numPages = Math.ceil(posts.length / postsPerPage);
+  const numPages = Math.ceil(blogPostsCount / postsPerPage);
 
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
-      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      path: i === 0 ? "/blog" : `/blog/${i + 1}`,
       component: blogListTemplate,
       context: {
         limit: postsPerPage,

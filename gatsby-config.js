@@ -71,15 +71,7 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-theme-ui`,
-
-    // ✅ aktifkan lagi netlify CMS
-    {
-      resolve: `gatsby-plugin-netlify-cms`,
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`, // bikin file kosong kalau belum ada
-      },
-    },
-
+    // gatsby-plugin-netlify-cms dihapus sementara
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -90,8 +82,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `STIFIn`,
-        short_name: `STIFIn`,
+        name: `Areta Informatis College`,
+        short_name: `Areta Informatics College`,
         start_url: `/`,
         background_color: `#FAD02F`,
         theme_color: `#25B05D`,
